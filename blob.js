@@ -1,12 +1,14 @@
 class Blob {
 
-    constructor(x, y) {
+    constructor(x, y,r) {
         this.x = x;
         this.y = y;
         let angle = random(0, 2*PI);
         this.xspeed = random(2, 5)*Math.cos(angle);
         this.yspeed = random(2, 5)*Math.sin(angle);
-        this.r = random(120, 240);
+        this.r = r;
+
+         //this.r = frameCount;
     }
 
     update() {
@@ -20,6 +22,7 @@ class Blob {
         noFill();
         stroke(0);
         strokeWeight(4);
+
         ellipse(this.x, this.y, this.r*2, this.r*2);
     }
 }
